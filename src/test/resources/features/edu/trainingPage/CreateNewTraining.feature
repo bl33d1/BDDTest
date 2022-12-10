@@ -1,3 +1,4 @@
+@regression
 @trainings
 Feature: Verify adding a new Training
 

@@ -1,3 +1,4 @@
+@regression
 @wiki
 Feature: Search Wikipedia
 
