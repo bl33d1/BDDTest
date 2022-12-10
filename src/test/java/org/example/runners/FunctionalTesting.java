@@ -15,7 +15,7 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
         "json:target/cucumber.json"
     },
     dryRun = false,
-    tags = "@training"
+    tags = "@trainings"
 )
 public class FunctionalTesting {
 
