@@ -16,6 +16,7 @@ public class WebDriverGenerator {
     if(driver == null){
       ChromeOptions options = new ChromeOptions();
       options.setHeadless(true);
+      options.setBinary("C:\\Users\\bllaca.bledi\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe");
       WebDriverManager.chromedriver().setup();
       //headless
       driver = new ChromeDriver(options);

@@ -18,5 +18,5 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
     tags = "@trainings"
 )
 public class FunctionalTesting {
-
+ // jenkins:8080
 }
