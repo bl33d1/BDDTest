@@ -4,7 +4,6 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
-import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -15,7 +14,7 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
         "json:target/cucumber.json"
     },
     dryRun = false,
-    tags = "@trainings"
+    tags = "@wiki"
 )
 public class FunctionalTesting {
  // jenkins:8080

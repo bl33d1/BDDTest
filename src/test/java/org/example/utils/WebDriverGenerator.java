@@ -27,4 +27,8 @@ public class WebDriverGenerator {
     return driver;
   }
 
+  public static void closeDriver(){
+    driver.quit();
+  }
+
 }
