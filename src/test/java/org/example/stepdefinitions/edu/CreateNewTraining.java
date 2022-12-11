@@ -4,12 +4,10 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.example.pages.AddNewTrainingPage;
 import org.example.utils.WebDriverGenerator;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class CreateNewTraining {
   WebDriver driver;
@@ -18,7 +16,8 @@ public class CreateNewTraining {
   public void i_navigate_to(String url) {
     driver = WebDriverGenerator.getWebDriver();
     driver.get(url);
-    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     trainingPage = new AddNewTrainingPage(driver);
   }
   @When("i provide the email {string} and click next")
