@@ -6,12 +6,14 @@ import org.example.pages.AddNewTrainingPage;
 import org.example.utils.WebDriverGenerator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 
 public class CreateNewTraining {
   WebDriver driver;
   AddNewTrainingPage trainingPage;
+
   @Given("i navigate to {string}")
   public void i_navigate_to(String url) {
     driver = WebDriverGenerator.getWebDriver();
@@ -20,34 +22,41 @@ public class CreateNewTraining {
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     trainingPage = new AddNewTrainingPage(driver);
   }
+
   @When("i provide the email {string} and click next")
   public void i_provide_the_email_and_click_next(String email) {
     trainingPage.usernameInput.sendKeys(email);
     trainingPage.usernameNextButton.click();
   }
+
   @When("i provide the password {string}")
   public void i_provide_the_password(String string) throws InterruptedException {
     Thread.sleep(2000);
     trainingPage.passwordInput.sendKeys(string);
     driver.findElement(By.xpath("//*[@id=\"idSIButton9\"]")).click();
   }
+
   @When("i click the button No for staying signed in")
   public void i_click_the_button_no_for_staying_signed_in() {
     trainingPage.staySignedInNoButton.click();
   }
+
   @When("i click the menu button")
   public void i_click_the_menu_button() {
     trainingPage.openMenuButton.click();
   }
-  @When("i click on My Organization and next Training list bootstrapbtn")
-  public void i_click_on_my_organization_and_next_training_list_bootstrapbtn() {
+
+  @When("i click on My Organization and next Training list button")
+  public void i_click_on_my_organization_and_next_training_list_button() {
     trainingPage.myOrganizationMenuOption.click();
     driver.findElement(By.xpath("/html/body/app-root/app-bases/div/div/div/div/app-my-organisation/div")).click();
   }
+
   @When("i click on New Training button")
   public void i_click_on_new_training_button() {
     trainingPage.newTrainingButton.click();
   }
+
   @When("i fill out the text fields")
   public void i_fill_out_the_text_fields() {
     trainingPage.title.sendKeys("Test title");
@@ -55,6 +64,8 @@ public class CreateNewTraining {
     trainingPage.shortDescription.sendKeys("Test shDescription");
     trainingPage.target.sendKeys("Test target");
     trainingPage.targetGroup.sendKeys("Test target group");
+    new Select(trainingPage.trainingType).selectByIndex(1);
+    new Select(trainingPage.isExternal).selectByIndex(1);
     trainingPage.requiredMaterial.sendKeys("requiredMaterial");
     trainingPage.trainingPreparation.sendKeys("trainingPreparation");
     trainingPage.additionalPreperation.sendKeys("additionalPreperation");
@@ -65,6 +76,5 @@ public class CreateNewTraining {
     trainingPage.pricePersonEstimation.sendKeys("pricePersonEstimation");
     trainingPage.numberOfParticipants.sendKeys("numberOfParticipants");
     trainingPage.contactForQuestions.sendKeys("contactForQuestions");
-
   }
 }

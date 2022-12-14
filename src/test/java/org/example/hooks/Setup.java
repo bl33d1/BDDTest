@@ -1,8 +1,8 @@
 package org.example.hooks;
 
-import io.cucumber.java.AfterAll;
 import io.cucumber.java.BeforeAll;
 import org.example.utils.WebDriverGenerator;
+import org.junit.jupiter.api.AfterAll;
 
 public class Setup {
   @BeforeAll
@@ -11,7 +11,7 @@ public class Setup {
   }
 
   @AfterAll
-  public void tearDown(){
+  public static void tearDown(){
     WebDriverGenerator.closeDriver();
   }
 }
