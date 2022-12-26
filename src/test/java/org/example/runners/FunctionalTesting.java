@@ -1,7 +1,11 @@
 package org.example.runners;
 
+import io.cucumber.java.BeforeAll;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import org.example.utils.WebDriverGenerator;
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 
 
@@ -17,5 +21,8 @@ import org.junit.runner.RunWith;
     tags = "@login"
 )
 public class FunctionalTesting {
-
+    @AfterClass
+    public static void tearDown(){
+        WebDriverGenerator.getWebDriver().quit();
+    }
 }
