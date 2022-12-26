@@ -1,3 +1,4 @@
+@login
 @regression
 Feature: Verify that i can login using valid credentials
 

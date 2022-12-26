@@ -14,8 +14,8 @@ import org.junit.runner.RunWith;
         "json:target/cucumber.json"
     },
     dryRun = false,
-    tags = "@trainings"
+    tags = "@login"
 )
 public class FunctionalTesting {
- // jenkins:8080
+
 }

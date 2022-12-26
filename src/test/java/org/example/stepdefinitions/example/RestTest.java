@@ -14,6 +14,9 @@ public class RestTest {
   }
   @Then("i should receive a status code of {int}")
   public void i_should_receive_a_status_code_of(Integer int1) {
-    response.then().statusCode(200);
+    response.then().statusCode(int1);
   }
+
 }
+
+

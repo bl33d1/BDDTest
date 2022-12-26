@@ -23,8 +23,8 @@ public class Wiki {
   public void i_hit_the_search_button() {
     driver.findElement(By.xpath("//*[@id=\"search-form\"]/fieldset/button")).click();
   }
-  @Then("The title should contain {string}")
-  public void the_title_should_contain(String string) {
+  @Then("The title is equal to {string}")
+  public void the_title_is_equal_to(String string) {
     Assert.assertEquals(string, driver.getTitle());
   }
 }
