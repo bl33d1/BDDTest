@@ -3,7 +3,9 @@ package org.example.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
 
 public class AddNewTrainingPage extends BasePage{
 
@@ -95,6 +97,10 @@ public class AddNewTrainingPage extends BasePage{
   public WebElement neccessaryEquipment;
 
   // Class Section
+  @FindBy(xpath = "/html/body/app-root/app-bases/div/div/div/div/app-create-training/div/div/form/div[2]/button")
+  public WebElement addNewClass;
+  @FindBy(xpath = "//div[@formarrayname=\"classes\"]")
+  public List<WebElement> allClassesList;
   @FindBy(xpath="//*[@id=\"ngb-panel-0\"]/div/div/div[1]/select[1]")
   public WebElement classVariation;
   @FindBy(xpath="//*[@id=\"ngb-panel-0\"]/div/div/div[1]/input[1]")
@@ -134,6 +140,24 @@ public class AddNewTrainingPage extends BasePage{
   @FindBy(xpath="//*[@id=\"ngb-panel-0\"]/div/div/div[2]/div[4]/div[2]/input")
   public WebElement classDurationTo;
 
-
+  public void fillFields(){
+    title.sendKeys("Test title");
+    description.sendKeys("Test description");
+    shortDescription.sendKeys("Test shDescription");
+    target.sendKeys("Test target");
+    targetGroup.sendKeys("Test target group");
+    new Select(trainingType).selectByIndex(1);
+    new Select(isExternal).selectByIndex(1);
+    requiredMaterial.sendKeys("requiredMaterial");
+    trainingPreparation.sendKeys("trainingPreparation");
+    additionalPreperation.sendKeys("additionalPreperation");
+    visibleDuration.sendKeys("visibleDuration");
+    duration.sendKeys("2");
+    validityInYears.sendKeys("validityInYears");
+    expireReminderMonth.sendKeys("expireReminderMonth");
+    pricePersonEstimation.sendKeys("pricePersonEstimation");
+    numberOfParticipants.sendKeys("numberOfParticipants");
+    contactForQuestions.sendKeys("contactForQuestions");
+  }
 
 }

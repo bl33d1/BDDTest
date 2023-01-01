@@ -13,4 +13,3 @@ Feature:Aa a user i want to be able to login
     And i click on My Organization and next Training list button
     And i click on New Training button
     And i fill out the text fields
-

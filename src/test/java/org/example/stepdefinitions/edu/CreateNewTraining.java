@@ -6,7 +6,6 @@ import org.example.pages.AddNewTrainingPage;
 import org.example.utils.WebDriverGenerator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 
@@ -59,22 +58,6 @@ public class CreateNewTraining {
 
   @When("i fill out the text fields")
   public void i_fill_out_the_text_fields() {
-    trainingPage.title.sendKeys("Test title");
-    trainingPage.description.sendKeys("Test description");
-    trainingPage.shortDescription.sendKeys("Test shDescription");
-    trainingPage.target.sendKeys("Test target");
-    trainingPage.targetGroup.sendKeys("Test target group");
-    new Select(trainingPage.trainingType).selectByIndex(1);
-    new Select(trainingPage.isExternal).selectByIndex(1);
-    trainingPage.requiredMaterial.sendKeys("requiredMaterial");
-    trainingPage.trainingPreparation.sendKeys("trainingPreparation");
-    trainingPage.additionalPreperation.sendKeys("additionalPreperation");
-    trainingPage.visibleDuration.sendKeys("visibleDuration");
-    trainingPage.duration.sendKeys("2");
-    trainingPage.validityInYears.sendKeys("validityInYears");
-    trainingPage.expireReminderMonth.sendKeys("expireReminderMonth");
-    trainingPage.pricePersonEstimation.sendKeys("pricePersonEstimation");
-    trainingPage.numberOfParticipants.sendKeys("numberOfParticipants");
-    trainingPage.contactForQuestions.sendKeys("contactForQuestions");
+    trainingPage.fillFields();
   }
 }
