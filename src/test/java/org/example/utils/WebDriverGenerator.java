@@ -17,6 +17,12 @@ public class WebDriverGenerator {
 
     if(driver == null){
 
+      // TODO: Set browser type based on configuration properties file
+
+      String browser = ConfigurationReader.getProperty("browser");
+
+      switch (browser){
+        case "chrome":
           ChromeOptions options = new ChromeOptions();
           //options.setHeadless(true);
           options.setBinary("C:\\Users\\bllaca.bledi\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe");
@@ -24,6 +30,16 @@ public class WebDriverGenerator {
           driver = new ChromeDriver(options);
           //driver.manage().window().maximize();
           return driver;
+        case "firefox":
+          FirefoxOptions optionsF = new FirefoxOptions();
+          //options.setHeadless(true);
+          //optionsF.setBinary("C:\\Users\\bllaca.bledi\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe");
+          WebDriverManager.firefoxdriver().setup();
+          driver = new FirefoxDriver(optionsF);
+          //driver.manage().window().maximize();
+          return driver;
+      }
+
     }
     return driver;
   }

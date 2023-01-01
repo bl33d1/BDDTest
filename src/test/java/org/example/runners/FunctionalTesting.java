@@ -1,14 +1,9 @@
 package org.example.runners;
 
-import io.cucumber.java.BeforeAll;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-import junit.framework.TestResult;
-import org.example.utils.ScreenshotRuleUtil;
 import org.example.utils.WebDriverGenerator;
-import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Rule;
 import org.junit.runner.RunWith;
 
 
@@ -25,4 +20,8 @@ import org.junit.runner.RunWith;
     tags = "@wiki"
 )
 public class FunctionalTesting {
+@AfterClass
+    public static void tearDown(){
+        WebDriverGenerator.closeDriver();
+    }
 }
