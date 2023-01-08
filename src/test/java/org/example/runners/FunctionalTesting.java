@@ -4,6 +4,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.example.utils.WebDriverGenerator;
 import org.junit.AfterClass;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.runner.RunWith;
 
 
@@ -14,14 +15,14 @@ import org.junit.runner.RunWith;
     plugin = {"pretty",
         "html:target/cucumber-reports.html",
         "json:target/cucumber.json",
-        "rerun:target/rerun.txt"
+        "rerun:target/rerun.txt",
     },
     dryRun = false,
-    tags = "@wiki"
+    tags = "@dateCalculation"
 )
 public class FunctionalTesting {
-@AfterClass
+    @AfterClass
     public static void tearDown(){
-        WebDriverGenerator.closeDriver();
+//        WebDriverGenerator.closeDriver();
     }
 }

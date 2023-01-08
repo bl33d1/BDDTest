@@ -125,8 +125,6 @@ public class AddNewTrainingPage extends BasePage{
   public WebElement currencyType;
   @FindBy(xpath="//*[@id=\"ngb-panel-0\"]/div/div/div[2]/div[2]/div[2]/input")
   public WebElement cost;
-  @FindBy(xpath="//*[@id=\"ngb-panel-0\"]/div/div/div[2]/div[5]/div/input")
-  public WebElement calculatedDate;
   @FindBy(xpath="//*[@id=\"ngb-panel-0\"]/div/div/div[2]/div[6]/div/div/label[1]")
   public WebElement certificationClass;
   @FindBy(xpath="//*[@id=\"classStatus\"]")
@@ -139,6 +137,12 @@ public class AddNewTrainingPage extends BasePage{
   public WebElement classDurationFrom;
   @FindBy(xpath="//*[@id=\"ngb-panel-0\"]/div/div/div[2]/div[4]/div[2]/input")
   public WebElement classDurationTo;
+  @FindBy(xpath="/html/body/app-root/app-bases/div/div/div/div/app-create-training/div/div/form/div[2]/button")
+  public WebElement addNewClassButton;
+  @FindBy(xpath="//*[@id=\"ngb-panel-0\"]/div/div/div[2]/div[4]/div[2]/input")
+  public WebElement endDate;
+  @FindBy(xpath="//*[@id=\"ngb-panel-0\"]/div/div/div[2]/div[5]/div/input")
+  public WebElement calculatedDate;
 
   public void fillFields(){
     title.sendKeys("Test title");

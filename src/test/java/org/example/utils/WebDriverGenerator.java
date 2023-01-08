@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+import java.time.Duration;
+
 public class WebDriverGenerator {
 
   private WebDriverGenerator(){}
@@ -24,11 +26,12 @@ public class WebDriverGenerator {
       switch (browser){
         case "chrome":
           ChromeOptions options = new ChromeOptions();
-          //options.setHeadless(true);
+          options.setHeadless(true);
           options.setBinary("C:\\Users\\bllaca.bledi\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe");
           WebDriverManager.chromedriver().setup();
           driver = new ChromeDriver(options);
-          //driver.manage().window().maximize();
+          driver.manage().window().maximize();
+          driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
           return driver;
         case "firefox":
           FirefoxOptions optionsF = new FirefoxOptions();
@@ -46,6 +49,7 @@ public class WebDriverGenerator {
 
   public static void closeDriver(){
     driver.quit();
+    driver = null;
   }
 
 }
